@@ -39,43 +39,33 @@ Azure ML Explorer automatically shows:
 -Column statistics
 
 🏗 Training Pipeline Architecture
-🔹 Steps Performed
+-🔹 Steps Performed
 
-Select Columns in Dataset
+-Select Columns in Dataset
 
-Removed: PatientID
+-Removed: PatientID
 
-Normalize Data
+-Normalize Data
 
-MinMax scaling applied to all numeric columns
+-MinMax scaling applied to all numeric columns
 
-Split Data
+-Split Data
 
-70% training / 30% testing
+-70% training / 30% testing
 
-Two-Class Logistic Regression
+-Two-Class Logistic Regression
 
-Train Model
+-Train Model
 
-Score Model
+-Score Model
 
-Evaluate Model
+-Evaluate Model
 
 📈 Evaluation Metrics
 
 The Evaluate Model module provides:
 
-Accuracy
-
-Precision
-
-Recall
-
-F1 Score
-
-ROC Curve & AUC
-
-Confusion Matrix
+-Accuracy, Precision, Recall, F1 Score, ROC Curve & AUC, Confusion Matrix
 
 These metrics help assess model quality and classify diabetic conditions.
 
@@ -83,59 +73,59 @@ These metrics help assess model quality and classify diabetic conditions.
 
 The inference pipeline performs:
 
-Web Service Input
+-Web Service Input
 
-Apply same transformations (Select Columns + Normalize)
+-Apply same transformations (Select Columns + Normalize)
 
-Score Model
+-Score Model
 
-Execute Python Script (formats final output)
+-Execute Python Script (formats final output)
 
-Web Service Output
+-Web Service Output
 
 ✔ Output Columns Returned
 
-PatientID
+-PatientID
 
-DiabetesPrediction (0 / 1)
+-DiabetesPrediction (0 / 1)
 
-Probability
+-Probability
 
 🚀 Deployment
 Compute Used
 
-Training: Azure ML Compute Cluster
+-Training: Azure ML Compute Cluster
 
-Deployment: Azure Container Instance (ACI)** (Free-tier friendly)
+-Deployment: Azure Container Instance (ACI)** (Free-tier friendly)
 
-Endpoint name: predict-diabetes
+-Endpoint name: predict-diabetes
 
-Deployment Steps
+--Deployment Steps
 
-Created inference pipeline
+-Created inference pipeline
 
-Replaced dataset with Enter Data Manually block
+-Replaced dataset with Enter Data Manually block
 
-Added Web Service Input
+-Added Web Service Input
 
-Connected transformations → Model → Python Script → Output
+-Connected transformations → Model → Python Script → Output
 
-Published the pipeline
+-Published the pipeline
 
-Selected ACI
+-Selected ACI
 
-Waited for deployment to finish
+-Waited for deployment to finish
 
-Verified endpoint health in Details tab
+-Verified endpoint health in Details tab
 
-Tested endpoint successfully using JSON test input
+-Tested endpoint successfully using JSON test input
 
 🛠 Technologies & Tools Used
-Area	-Tools
-Cloud	-Microsoft Azure
-ML Platform	-Azure Machine Learning Studio (Designer)
-Transformation	-Select Columns, Normalize, Split
-Algorithms	-Two-Class Logistic Regression
-Deployment	-Azure Container Instance (ACI)
-Endpoint Type	-V1 Real-Time Endpoint
-Language	-Python (for endpoint testing)
+--Area	-Tools
+--Cloud	-Microsoft Azure
+--ML Platform	-Azure Machine Learning Studio (Designer)
+--Transformation	-Select Columns, Normalize, Split
+--Algorithms	-Two-Class Logistic Regression
+--Deployment	-Azure Container Instance (ACI)
+--Endpoint Type	-V1 Real-Time Endpoint
+--Language	-Python (for endpoint testing)
